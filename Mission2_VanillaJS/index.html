@@ -1,13 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href= "asstes/stylee.css">
-    <title>Mission 2 - Caturbintari</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href= "asstes/stylee.css">
+        <title>Mission 2 - Caturbintari</title>
+    </head>
+    <body>
+        <section>
+            <div class="color"></div>
+            <ul>
+                <li><a href="https://www.instagram.com/crumybrulee/"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://github.com/crumybrulee"><i class="fa-brands fa-github"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/caturbintari/"><i class="fa-brands fa-linkedin"></i></a></li>
+                <li><a href="https://twitter.com/ceislynn"><i class="fa-brands fa-twitter"></i></a></li>
+            </ul>
+        </section>
+
+        </div>
+        <div class="container">
+            <div class="box">
+                <div class="clock">
+                    <div class="hour">
+                        <div class="hr" id="hr"></div>
+                    </div>
+                    <div class="min">
+                        <div class="mn" id="mn"></div>
+                    </div>
+                    <div class="sec">
+                        <div class="sc" id="sc"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            const deg = 6;
+            const hr = document.querySelector('#hr');
+            const mn = document.querySelector('#mn');
+            const sc = document.querySelector('#sc');
+
+            setInterval(() => {
+                let day = new Date();
+                let hh = day.getHours() * 30;
+                let mm = day.getMinutes() * deg;
+                let ss = day.getSeconds() * deg;
+
+                hr.style.transform = `rotateZ(${hh+(mm/12)}deg)`;
+                mn.style.transform = `rotateZ(${(mm)}deg)`;
+                sc.style.transform = `rotateZ(${ss}deg)`;
+            });
+        </script>
+    </body>
 </html>
